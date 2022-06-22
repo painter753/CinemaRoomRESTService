@@ -1,2 +1,2 @@
 # CinemaRoomRESTService
-This is the study project from JetBrains Academy Written in Kotlin
+This is the study project from JetBrains Academy Written in Java
