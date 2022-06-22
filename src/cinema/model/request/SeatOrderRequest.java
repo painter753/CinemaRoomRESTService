@@ -1,11 +1,11 @@
-package cinema.model;
+package cinema.model.request;
 
-public class SeatOrder {
+public class SeatOrderRequest {
 
     private int row;
     private int column;
 
-    public SeatOrder() {}
+    public SeatOrderRequest() {}
 
     public int getRow() {
         return row;

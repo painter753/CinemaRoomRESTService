@@ -49,6 +49,11 @@ public class CinemaRoom {
         return seatsMatrix[row - 1][column - 1];
     }
 
+    public Seat cancelBooking(int row, int column) {
+        availabilityMatrix[row - 1][column - 1] = false;
+        return seatsMatrix[row - 1][column - 1];
+    }
+
     public int getRows() {
         return rows;
     }

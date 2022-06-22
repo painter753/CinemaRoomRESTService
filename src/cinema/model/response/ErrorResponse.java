@@ -1,4 +1,4 @@
-package cinema.model;
+package cinema.model.response;
 
 public class ErrorResponse {
 

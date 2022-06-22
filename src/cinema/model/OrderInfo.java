@@ -2,40 +2,19 @@ package cinema.model;
 
 public class OrderInfo {
 
-    private int row;
-    private int column;
-    private int price;
+    private final String token;
+    private final TicketInfo ticket;
 
-    public OrderInfo() {}
-
-    public OrderInfo(int row, int column, int price) {
-        this.row = row;
-        this.column = column;
-        this.price = price;
+    public OrderInfo(String token, TicketInfo ticket) {
+        this.token = token;
+        this.ticket = ticket;
     }
 
-
-    public int getRow() {
-        return row;
+    public String getToken() {
+        return token;
     }
 
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getColumn() {
-        return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
+    public TicketInfo getTicket() {
+        return ticket;
     }
 }

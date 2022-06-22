@@ -1,7 +1,9 @@
 package cinema;
 
-import cinema.model.ErrorResponse;
-import cinema.model.SeatOrder;
+import cinema.model.RefundInfo;
+import cinema.model.request.RefundRequest;
+import cinema.model.response.ErrorResponse;
+import cinema.model.request.SeatOrderRequest;
 import cinema.service.RoomInfoService;
 import cinema.service.SeatPurchaseService;
 import org.springframework.http.HttpStatus;
@@ -28,9 +30,18 @@ public class CinemaRoomController {
     }
 
     @PostMapping("/purchase")
-    public ResponseEntity purchase(@RequestBody SeatOrder order) {
+    public ResponseEntity purchase(@RequestBody SeatOrderRequest order) {
         try {
             return ResponseEntity.ok(seatPurchaseService.order(order.getRow(), order.getColumn()));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(e.getMessage()));
+        }
+    }
+
+    @PostMapping("/return")
+    public ResponseEntity returnTicket(@RequestBody RefundRequest refund) {
+        try {
+         return ResponseEntity.ok(seatPurchaseService.refund(refund.getToken()));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(e.getMessage()));
         }
