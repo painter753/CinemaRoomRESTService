@@ -50,7 +50,7 @@ public class CinemaRoom {
     }
 
     public Seat cancelBooking(int row, int column) {
-        availabilityMatrix[row - 1][column - 1] = false;
+        availabilityMatrix[row - 1][column - 1] = true;
         return seatsMatrix[row - 1][column - 1];
     }
 
